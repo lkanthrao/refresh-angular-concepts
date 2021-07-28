@@ -1,40 +1,63 @@
-<span>{{ title }} app is running!</span>
+<table border="3">
+  <br>
+    <tr>
+    <span>{{ title }} app is running!</span>
 
-<br/>
+    <br/>
 
-variable1  = {{variable1}}
+    variable1 = {{variable1}}
 
-<br>
+    <br>
 
-variable2 = {{variable2}}
+    variable2 = {{variable2}}
 
-<br>
+    <br>
 
-<!-- variable3 = {{variable3 = variable1 + variable2}} LK - THIS WILL FAIL LEADING,  Bindings cannot contain assignments -->
+    <!-- variable3 = {{variable3 = variable1 + variable2}} LK - THIS WILL FAIL LEADING,  Bindings cannot contain assignments -->
 
-variable3 = {{variable1 + variable2}}
-<br>
+    variable3 = {{variable1 + variable2}}
+    <br>
 
-<!-- this is calculated in methog {{ getSum(); }} LK - this will fail, leading - Binding expression cannot contain chained expression at the end of the expression  -->
+    <!-- this is calculated in methog {{ getSum(); }} LK - this will fail, leading - Binding expression cannot contain chained expression at the end of the expression  -->
 
-this is calculated in method {{getSum()}}
+    this is calculated in method {{getSum()}}
 
-<br>
-this is calculated returned string in method {{ getSum2() }}
+    <br>
+    this is calculated returned string in method {{ getSum2() }}
 
-<br>
-{{variable1}},variable2
-<br>
+    <br>
+    {{variable1}},variable2
+    <br>
 
-<!-- <div [onmouseover]="getSum2"> on mouse hover property binding</div> LK -> Can't bind to 'onmouseover' since it isn't a known property of 'div' -->
+    <!-- <div [onmouseover]="getSum2"> on mouse hover property binding</div> LK -> Can't bind to 'onmouseover' since it isn't a known property of 'div' -->
 
-<div [style]="getStyle()"> [style] on mouse hover property binding</div>
+    <div [style]="getStyle()"> [style] on mouse hover property binding.</div>
 
-<!-- <div [style]="color: darkviolet"> on mouse hover property binding</div> LK this is invalid, because in property binding, anything in 
-    double quotes must be an ts extression - variable or method. Error you would get is Error: Quotes are not supported for evaluation! and you MUST restart ng serve
- -->
- 
+    <!-- <div [style]="color: darkviolet"> on mouse hover property binding</div> LK this is invalid, because in property binding, anything in
+        double quotes must be an ts extression - variable or method. Error you would get is Error: Quotes are not supported for evaluation! and you MUST restart ng serve
+     -->
 
- <app-heroes>
-     
- </app-heroes>
+    <div>
+      <p [ngClass]="classes">
+        Property binding.
+      </p>
+    </div>
+
+    <table border="2"> <!--see this border property and the BELOW one-->
+      <tr>
+        <app-heroes></app-heroes>
+      </tr>
+    </table>
+
+    <br>
+    <table [border]="getSum()"> <!--see this border property and the ABOVE one-->
+      <data-sharing  [fromParent]='giveItToChild()' [fromParent2]='variable2'>
+
+      </data-sharing>
+    </table>
+
+      to parent from child = {{toParent}}
+
+  </tr>
+  <br>
+</table>
