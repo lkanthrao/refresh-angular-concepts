@@ -1,6 +1,6 @@
 <table border="3">
   <br>
-    <tr>
+  <tr>
     <span>{{ title }} app is running!</span>
 
     <br/>
@@ -51,12 +51,14 @@
 
     <br>
     <table [border]="getSum()"> <!--see this border property and the ABOVE one-->
-      <data-sharing  [fromParent]='giveItToChild()' [fromParent2]='variable2'>
+      <data-sharing (fromChildToParentEvent)="printMessageFromChild($event)" [fromParent2]='variable2'
+                    [fromParent]='giveItToChild()'>
 
       </data-sharing>
     </table>
 
-      to parent from child = {{toParent}}
+    {{fromParentThoughEvent}}
+
 
   </tr>
   <br>

@@ -1,8 +1,18 @@
-this is child component
+This is child component
+<br>
+Data will be shared between this and parent component.
+<div>
+  What did child get from parent => {{ fromParent }}, <br>
+  and too from parent = "{{ fromParent2 }}"
+</div>
 
-data will be shared between this and parent component.
+<br>
+
+<div [style.color]="styleFromTS">
+  style form cs
+</div>
 
 <div>
-  What did child get from parent = {{ fromParent }}, and even this from parent = {{fromParent2}}
-
+  <button (click)="sendDataToParent()"> send this to parent</button>
 </div>
+

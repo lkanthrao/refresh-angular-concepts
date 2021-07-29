@@ -1,4 +1,4 @@
-import {Component, Output} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +12,7 @@ export class AppComponent {
   variable2 = 2;
   variable3: number = 3;
 
-  @Output() toParent: string = '';
-
+  fromParentThoughEvent: any;
 
   // variable4: number;  lk this won't work
 
@@ -23,7 +22,7 @@ export class AppComponent {
 
   // getSum2: any { is invalid method.
   classes: any = 'special';
-  toChild: any = 'take this from parent';
+  toChild: any = 'variable1 = ' + this.variable1;
 
   getSum2(): any {
     return "\"Tour of heroes\""
@@ -35,5 +34,11 @@ export class AppComponent {
 
   giveItToChild() {
     return this.toChild;
+  }
+
+  printMessageFromChild(event: any) {
+    console.log(event);
+    this.fromParentThoughEvent = event;
+
   }
 }
