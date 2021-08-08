@@ -5,10 +5,12 @@ import {AppComponent} from "./app.component";
 import {HeroesComponent} from "./heroes/heroes.component";
 import {DataSharingComponent} from "./datasharing/data-sharing.component";
 import { BoldDirective } from './directive/bold.directive';
+import { DigformsComponent } from './digforms/digforms.component';
+import { CustomtableComponent } from './customtable/customtable.component';
 
 @NgModule({
   providers: [],
-  declarations: [AppComponent, HeroesComponent, DataSharingComponent, DataSharingComponent, BoldDirective],
+  declarations: [AppComponent, HeroesComponent, DataSharingComponent, DataSharingComponent, BoldDirective, DigformsComponent, CustomtableComponent],
   bootstrap: [AppComponent],
   exports: [
     DataSharingComponent
