@@ -1,0 +1,16 @@
+ngDirectives here
+*ngFor
+
+<li *ngFor='let hero of heroes'> {{hero.heroTitle}} {{hero.heroName}} rank is {{hero.heroRank}}</li>
+<li (mouseover)="justAnotherMethod3($event)"
+    *ngFor='let eachHero of heroes'> {{ eachHero.heroTitle }} {{eachHero.heroName }} auto rank
+  is {{eachHero.heroRank}}</li>
+
+*ngif
+
+<li *ngIf=' heroes[0].heroRank == 5' [style]="justAnotherMethod2()"> display here only if the rank is 8</li>
+
+<!--<li *ngIf = 'heroes[1].heroName.match("hero2")' [className]='justAnotherMethod()'> {{heroes[1].heroName}}</li>-->
+
+
+<li id="listId" *ngIf = 'this.showOrhide' (mouseover)="justAnotherMethod3($event)"> Over to hide it </li>
